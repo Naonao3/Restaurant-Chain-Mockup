@@ -15,6 +15,8 @@ $min = (int)$min;
 $max = (int)$max;
 
 // ユーザーの生成
+$employees = \Helpers\RandomGenerator::employees($min,$max);
+$restaurantLocations = \Helpers\RandomGenerator::restaurantChains($min,$max);
 $restaurantChains = Helpers\RandomGenerator::restaurantChains($min, $max);
 ?>
 
