@@ -1,22 +1,21 @@
 <?php
-
-use Helpers\RandomGenerator;
-
-spl_autoload_extensions(".php");
+// コードベースのファイルのオートロード
+spl_autoload_extensions(".php"); 
 spl_autoload_register();
 
-require_once 'vendor/autload.php';
+// composerの依存関係のオートロード
+require_once 'vendor/autoload.php';
 
+// クエリ文字列からパラメータを取得
 $min = $_GET['min'] ?? 5;
 $max = $_GET['max'] ?? 20;
 
+// パラメータが整数であることを確認
 $min = (int)$min;
 $max = (int)$max;
 
-$employees = RandomGenerator::employees($min,$max);
-$restaurantLocations = RandomGenerator::restauratLocations($min,$max);
-$restaurantChains = RandomGenerator::restaurantChains($min,$max);
-
+// ユーザーの生成
+$restaurantChains = Helpers\RandomGenerator::restaurantChains($min, $max);
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +28,7 @@ $restaurantChains = RandomGenerator::restaurantChains($min,$max);
 <body>
     <h1>Restaurant Chain Mockup</h1>
     <?php foreach ($restaurantChains as $restaurantChain): ?>
-        <?= $restaurantChain->toHTML() ?>
+        <? echo $restaurantChain->toHTML(); ?>
     <?php endforeach; ?>
 </body>
 </html>

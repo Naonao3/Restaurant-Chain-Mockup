@@ -3,7 +3,7 @@
 namespace Helpers;
 
 use Faker\Factory;
-use Models\Companies\RestaurantChain\RestaurantChain;
+use Models\Companies\RestaurantChains\RestaurantChain;
 use Models\RestaurantLocations\RestaurantLocation;
 use Models\Users\Employees\Employee;
 
@@ -101,4 +101,5 @@ class RandomGenerator{
     }
 
 }
+
 ?>

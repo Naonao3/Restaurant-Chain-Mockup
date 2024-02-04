@@ -1,6 +1,6 @@
 <?php
 
-namespace InterFaces;
+namespace Interfaces;
 
 interface FileConvertertible{
     public function toString():string;

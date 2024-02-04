@@ -1,8 +1,8 @@
 <?php
 
-namespace Models\Companies\RestaurantChain;
+namespace Models\Companies\RestaurantChains;
 
-use InterFaces\FileConvertertible;
+use Interfaces\FileConvertertible;
 use models\Companies\Company;
 
 class RestaurantChain extends Company implements FileConvertertible{

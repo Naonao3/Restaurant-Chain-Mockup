@@ -3,7 +3,7 @@
 namespace Models\Users\Employees;
 
 use DateTime;
-use InterFaces\FileConvertertible;
+use Interfaces\FileConvertertible;
 use Models\Users\User;
 
 class Employee extends User implements FileConvertertible{ 
