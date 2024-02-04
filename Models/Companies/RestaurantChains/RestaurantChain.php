@@ -3,7 +3,7 @@
 namespace Models\Companies\RestaurantChains;
 
 use Interfaces\FileConvertertible;
-use models\Companies\Company;
+use Models\Companies\Company;
 
 class RestaurantChain extends Company implements FileConvertertible{
     private int $chainId;

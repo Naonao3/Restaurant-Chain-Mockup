@@ -32,6 +32,7 @@ class User implements FileConvertertible{
     {
         $this->id = $id;
         $this->firstName = $firstName;
+        $this->lastName = $lastName;
         $this->email = $email;
         $this->hashedPassword = password_hash($password,PASSWORD_DEFAULT);
         $this->phoneNumber = $phoneNumber;
