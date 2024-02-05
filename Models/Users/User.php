@@ -3,9 +3,9 @@
 namespace Models\Users;
 
 use DateTime;
-use Interfaces\FileConvertertible;
+use Interfaces\FileConvertible;
 
-class User implements FileConvertertible{
+class User implements FileConvertible{
     private int $id;
     private string $firstName;
     private string $lastName;

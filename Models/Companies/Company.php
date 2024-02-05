@@ -2,9 +2,9 @@
 
 namespace Models\Companies;
 
-use Interfaces\FileConvertertible;
+use Interfaces\FileConvertible;
 
-class Company implements FileConvertertible{
+class Company implements FileConvertible{
     private string $name;
     private int $foundingYear;
     private string $description;

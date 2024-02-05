@@ -2,7 +2,7 @@
 
 namespace Interfaces;
 
-interface FileConvertertible{
+interface FileConvertible{
     public function toString():string;
     public function toHTML():string;
     public function toMarkdown():string;

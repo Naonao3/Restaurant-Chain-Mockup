@@ -2,10 +2,10 @@
 
 namespace Models\Companies\RestaurantChains;
 
-use Interfaces\FileConvertertible;
+use Interfaces\FileConvertible;
 use Models\Companies\Company;
 
-class RestaurantChain extends Company implements FileConvertertible{
+class RestaurantChain extends Company implements FileConvertible{
     private int $chainId;
     private array $restaurantLocation;
     private string $cuisineType;
@@ -55,10 +55,12 @@ class RestaurantChain extends Company implements FileConvertertible{
         return sprintf(
             "Chain ID: %s\n
              Restaurant Location: %s\n
+             Cuisine Type: %s/n
              Number Of Locations: %d\n
              Parent Cmpany: %s\n",
             $this->chainId,
             $this->restaurantLocation,
+            $this->cuisineType,
             $this->numberOfLocations,
             $this->parentCompany
         );        
@@ -69,6 +71,7 @@ class RestaurantChain extends Company implements FileConvertertible{
             "
             <p>Chain ID: %s</p>
             <p>Restaurant Location: %s</p>
+            <p>Cuisine Type: %s</p>
             <p>Number Of Locations: %d</p>
             <p>Parent Company: %s</p>
             ",
@@ -82,6 +85,7 @@ class RestaurantChain extends Company implements FileConvertertible{
     public function toMarkdown(): string{
         return " - Chain Id: {$this->chainId} 
                  - Restaurant Location: {$this->restaurantLocation} 
+                 - Cuisine Type: {$this->cuisineType} 
                  - Number Of Location: {$this->numberOfLocations} 
                  - Parent Company: {$this->parentCompany}";    
     }
@@ -90,6 +94,7 @@ class RestaurantChain extends Company implements FileConvertertible{
         return [
             "chainId" => $this->chainId,
             "restaurantLocation" => $this->restaurantLocation,
+            "cuisineType" => $this->cuisineType,
             "numberOfLocations" => $this->numberOfLocations,
             "parentCompany" => $this->parentCompany
         ];

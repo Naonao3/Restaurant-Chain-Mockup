@@ -2,9 +2,9 @@
 
 namespace Models\RestaurantLocations;
 
-use Interfaces\FileConvertertible;
+use Interfaces\FileConvertible;
 
-class RestaurantLocation implements FileConvertertible{
+class RestaurantLocation implements FileConvertible{
     private string $name;
     private string $address;
     private string $city;

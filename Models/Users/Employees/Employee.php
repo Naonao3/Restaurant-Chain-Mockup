@@ -3,10 +3,10 @@
 namespace Models\Users\Employees;
 
 use DateTime;
-use Interfaces\FileConvertertible;
+use Interfaces\FileConvertible;
 use Models\Users\User;
 
-class Employee extends User implements FileConvertertible{ 
+class Employee extends User implements FileConvertible{ 
     private string $jobTitle;
     private float $salary;
     private DateTime $startDate;
