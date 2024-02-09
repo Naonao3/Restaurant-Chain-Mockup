@@ -58,27 +58,48 @@ class RestaurantLocation implements FileConvertible{
         );
     }
 
+
+
     public function toHTML(): string{
+        $employeeList = "";
+        foreach($this->employees as $employee){
+                $employeeList .= $employee->toHTML();
+        }
+
         return sprintf("
-            <div class='card'>
-                <div class='avator'>SAMPLE</div>
-                <h2>%s</h2>
-                <p>Address: %s</p>
-                <p>City: %s</p>
-                <p>State: %s</p>
-                <p>Zip Code: %s<p>
-                <p>Employees: %s</p>
-                <p>Open: %s</p>
-                <p>Drive-Through: %s</p>
-            </div>",
-            $this->name,
-            $this->address,
-            $this->city,
-            $this->state,
+            <div class='accordion mx-4' id='accordionPanelsStayOpenExample'>
+                <div class='accordion-item'>
+                    <h2 class='accordion-header'>
+                        <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#panelsStayOpen-%s' aria-expanded='false' aria-controls='panelsStayOpen-%s'>
+                            %s
+                        </button>
+                    </h2>
+                    <div id='panelsStayOpen-%s' class='accordion-collapse collapse'>
+                        <div class='accordion-body'>
+                            <h2>Employees</h2>
+                            <table class='table'>
+                                <thead>
+                                    <tr>
+                                        <th scope='col'>ID</th>
+                                        <th scope='col'>Title</th>
+                                        <th scope='col'>Name</th>
+                                        <th scope='col'>Start Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    %s
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            ",
             $this->zipCode,
-            $this->employees,
-            $this->isOpen ? 'Yes' : 'No',
-            $this->hasDriveThru ? 'Yes' : 'No'
+            $this->zipCode,
+            $this->name,
+            $this->zipCode,
+            $employeeList
         );
     }
 

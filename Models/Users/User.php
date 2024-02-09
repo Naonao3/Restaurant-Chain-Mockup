@@ -133,6 +133,14 @@ class User implements FileConvertible{
             'role' => $this->role
         ];
     }
+
+    public function getID():int{
+        return $this->id;
+    }
+
+    public function getUserName():string{
+        return $this->firstName. " ".$this->lastName;
+    }
 }
 
 ?>

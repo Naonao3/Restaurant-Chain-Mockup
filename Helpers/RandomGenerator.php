@@ -22,10 +22,10 @@ class RandomGenerator{
             $faker->dateTimeThisCentury,
             $faker->dateTimeBetween('-10 years','+20 years'),
             $faker->randomElement(['admin','user','editor']),
-            $faker->randomElement('Chef','Cashier','Server','Cooking Assitance'),
+            $faker->randomElement(['Chef','Cashier','Server','Cooking Assitance']),
             $faker->randomFloat(),
-            $faker->dateTimeBetween('-20','now'),
-            $faker->randomElement(['Great😍','Good!','Not bad🤔','Same😥'])
+            $faker->dateTimeBetween('-10 years','now'),
+            array($faker->randomElement(['Great!!','Good!','Not bad','Same...']))
         );
     }
 

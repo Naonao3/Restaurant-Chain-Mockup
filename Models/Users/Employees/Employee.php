@@ -47,6 +47,7 @@ class Employee extends User implements FileConvertible{
         $this->awards = $awards;        
     }
 
+
     public function toString():string{
         return sprintf(
             "Job Title: %d\n
@@ -60,17 +61,19 @@ class Employee extends User implements FileConvertible{
         );
     }
 
-    public function toHTML():string{
+
+    public function toHTML(): string{
         return sprintf("
-            <p>Job Title: %s</p>
-            <p>Salary: %s</p>
-            <p>Start Date: %s</p>
-            <p>Awards: %s</p>
-            ",
+            <tr>
+                <th scope='row'>%s</th>
+                <td>%s</td>
+                <td>%s</td>
+                <td>%s</td>
+            </tr>",
+            parent::getID(),
             $this->jobTitle,
-            $this->salary,
-            $this->startDate,
-            $this->awards
+            parent::getUserName(),
+            $this->startDate->format('Y-m-d'),
         );
     }
 

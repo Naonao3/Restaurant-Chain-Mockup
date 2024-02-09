@@ -75,7 +75,8 @@ class Company implements FileConvertible{
     }
 
     public function toHTML():string{
-        return sprintf("
+        return sprintf(
+            "
             <div class='user-card'>
                 <div class='avator'>SAMPLE</div>
                 <h2>%s</h2> 
@@ -89,7 +90,8 @@ class Company implements FileConvertible{
                 <p>Country: %s</p>
                 <p>Founder: %s</p>
                 <p>Total Employees: %d</p>
-            </div>",
+            </div>
+            ",
             $this->name,
             $this->foundingYear,
             $this->description,

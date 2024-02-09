@@ -67,18 +67,19 @@ class RestaurantChain extends Company implements FileConvertible{
     }
 
     public function toHTML(): string{
+        $locationsList= "";
+        foreach($this->restaurantLocation as $restaurantLocation){
+            $locationsList .= $restaurantLocation->toHTML();
+        }
         return sprintf(
             "
-            <p>Chain ID: %s</p>
-            <p>Restaurant Location: %s</p>
-            <p>Cuisine Type: %s</p>
-            <p>Number Of Locations: %d</p>
-            <p>Parent Company: %s</p>
+            <div class='d-flex justify-content-center p-2 m-2'>
+                <h1>Restaurant Chain %s</h1>
+            </div>
+            %s
             ",
-            $this->chainId,
-            $this->restaurantLocation,
-            $this->numberOfLocations,
-            $this->parentCompany
+            $this->parentCompany,
+            $locationsList
         );        
     }
 
@@ -98,6 +99,10 @@ class RestaurantChain extends Company implements FileConvertible{
             "numberOfLocations" => $this->numberOfLocations,
             "parentCompany" => $this->parentCompany
         ];
+    }
+
+    public function restaurantLocation():array{
+        return $this->restaurantLocation;
     }
 }
 
