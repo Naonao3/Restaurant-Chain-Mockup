@@ -2,7 +2,9 @@
 レストランチェーンの詳細、各ロケーション、従業員の情報を効率的に管理するためのレストランチェーン管理システム
 
 ## Demo
-![Uploading RestaurantChainMockup.png…]()
+
+<img width="1040" alt="RestaurantChainMockup" src="https://github.com/Naonao3/Restaurant-Chain-Mockup/assets/97473345/8fec01aa-969d-4471-9bde-f13231609d01">
+
 
 
 ## 使用技術
